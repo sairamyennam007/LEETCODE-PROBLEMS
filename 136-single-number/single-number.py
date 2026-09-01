@@ -5,7 +5,6 @@ class Solution:
             if num not in  dict:
                 dict[num]=0
             else:
-                dict[num]+=1
-        for n in nums:
-            if dict[n]==0:
-                return n
+                dict.pop(num)
+        for n in dict:
+            return n
