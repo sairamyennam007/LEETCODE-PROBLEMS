@@ -4,14 +4,8 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         i=0
-        j=i+1
-        l=len(nums)
-        while j<l:
-            if nums[i]==0:
-                if nums[j]!=0:
-                    nums[i],nums[j]=nums[j],nums[i]
-                    i+=1
-                j+=1
-            else:
+        for j in range(len(nums)):
+            if nums[j]!=0:
+                nums[i],nums[j]=nums[j],nums[i]
                 i+=1
-                j+=1
+            
