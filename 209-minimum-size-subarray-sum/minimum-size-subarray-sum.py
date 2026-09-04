@@ -3,13 +3,11 @@ class Solution:
         i=0
         j=0
         s=0
-        l=float('inf')
-        minlen=l
+        minlen=float('inf')
         while j<len(nums):
             s+=nums[j]
             while s>=target:
-                l=j-i+1
-                minlen=min(l,minlen)
+                minlen=min(j-i+1,minlen)
                 s-=nums[i]
                 i+=1
             j+=1
