@@ -9,7 +9,7 @@ class Solution:
                 dic[s[j]]=1
             else:
                 dic[s[j]]+=1
-            if (j-i+1)-max(dic.values()) >k:
+            while  (j-i+1)-max(dic.values()) >k:
                 dic[s[i]]-=1
                 i+=1
             m=max(m,j-i+1)
