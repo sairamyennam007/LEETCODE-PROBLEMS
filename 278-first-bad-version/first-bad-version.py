@@ -8,12 +8,11 @@ class Solution:
         while i<j:
             mid=(i+j)//2
             if isBadVersion(mid):
-                if not isBadVersion(mid-1):
-                    return mid
-                j=mid-1
+            
+                j=mid
             else:
                 i=mid+1
         return i
-        
+
         
         
