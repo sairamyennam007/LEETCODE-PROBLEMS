@@ -12,7 +12,7 @@ class Solution:
         temp=head
         while temp and temp.next :
 
-          if temp and temp.next.val==val:
+          if temp.next.val==val:
             temp.next=temp.next.next
           else:
             temp=temp.next
