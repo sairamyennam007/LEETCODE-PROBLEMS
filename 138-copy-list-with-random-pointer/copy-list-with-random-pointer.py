@@ -20,7 +20,7 @@ class Solution:
             n.next=d.get(temp.next,None)
             n.random=d.get(temp.random,None)
             temp=temp.next
-        return d.get(head)
+        return d.get(head,None)
 
         
         
