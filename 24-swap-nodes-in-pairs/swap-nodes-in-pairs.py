@@ -8,19 +8,11 @@ class Solution:
         dummy=ListNode(0)
         dummy.next=head
         prev=dummy
-        f=head
-        while f and f.next:
-            swap2=f
-            swap1=f.next
-            f=f.next.next
-            swap2.next=f
-            swap1.next=swap2
-            prev.next=swap1
-            prev=swap2
+        while prev.next and prev.next.next:
+            first=prev.next
+            second=first.next
+            first.next=second.next
+            second.next=first
+            prev.next=second
+            prev=first
         return dummy.next
-
-
-
-
-            
-        
