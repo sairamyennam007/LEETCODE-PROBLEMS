@@ -16,7 +16,7 @@ class Solution:
             swap2.next=f
             swap1.next=swap2
             prev.next=swap1
-            prev=prev.next.next
+            prev=swap2
         return dummy.next
 
 
