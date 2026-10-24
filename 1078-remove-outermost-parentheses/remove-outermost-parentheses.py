@@ -14,6 +14,8 @@ class Solution:
                 if c==len(stk):
                     res+="".join(stk2[1:len(stk2)-1])
                     stk2.clear()
+                    stk.clear()
+                    c=0
         return res
 
 
