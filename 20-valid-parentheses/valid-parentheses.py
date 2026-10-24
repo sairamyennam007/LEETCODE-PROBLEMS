@@ -7,14 +7,11 @@ class Solution:
                 stk.append(num)
 
             else:
-              if stk:
-                if d[num]==stk[-1]:
-                    stk.pop()
-                else:
-                    return False
-              else:
-                    return False
-
+              if not stk or stk[-1]!=d[num]:
+                return False
+              stk.pop()
+                
+             
         return len(stk)==0
         
 
