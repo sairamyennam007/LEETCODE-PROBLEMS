@@ -10,17 +10,11 @@ class Solution(object):
         else:
             stk=[]
             for num in arr:
-                if num =='.':
+                if num =='.' or num=="":
                     continue
                 elif num=='..':
                     if stk:
                       stk.pop()
-                      stk.pop()
-                elif num=="":
-                    continue
                 else:
-                    stk.append("/")
                     stk.append(num)
-            if not stk:
-                stk.append("/")
-        return "".join(stk)
+        return "/"+"/".join(stk)
