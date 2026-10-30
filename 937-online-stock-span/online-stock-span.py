@@ -1,4 +1,3 @@
-res=[]
 class StockSpanner:
 
     def __init__(self):
@@ -12,7 +11,6 @@ class StockSpanner:
             while self.stk and self.stk[-1][0]<=r:
                 c+=self.stk.pop()[1]
             self.stk.append([price, c])
-        res.append(c)
         return c
     
 
