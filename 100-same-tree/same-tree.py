@@ -10,12 +10,8 @@ class Solution:
         def samet(p,q):
             if not p and not q:
                 return True
-            elif not p and q:
+            elif not p and q or p and not q or p.val != q.val:
                 return False
-            elif p and not q:
-                return False
-            elif p.val != q.val:
-               return False
             else:
                 return samet(p.left,q.left) and samet(p.right,q.right)
         return samet(p,q)
