@@ -1,37 +1,23 @@
 class Solution:
     def findAnagrams(self, s: str, p: str) -> list[int]:
+        d={}
+        w={}
+        res=[]
         i=0
         j=0
-        lt=[]
-        dic={}
-        win={}
         for num in p:
-            if num not in dic:
-                dic[num]=1
-            else:
-                 dic[num]+=1
+            d[num]=d.get(num,0)+1
         while j<len(s):
-            if s[j] not in win:
-                win[s[j]]=1
-            else:
-                win[s[j]]+=1
-            while (j-i+1)==len(p):
-                if win==dic:
-                    lt.append(i)
-                win[s[i]]-=1
-                if win[s[i]]==0:
-                    win.pop(s[i])
+            w[s[j]]=w.get(s[j],0)+1
+            while j-i+1==len(p):
+                if w==d:
+                    res.append(i)
+                w[s[i]]-=1
+                if w[s[i]]==0:
+                    w.pop(s[i])
                 i+=1
             j+=1
-        return lt
+        return res
+                
 
-
-
-            
-
-            
-
-
-
-           
-        return lt
+        
