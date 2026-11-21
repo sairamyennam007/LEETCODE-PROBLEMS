@@ -1,14 +1,9 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        dict={}
-        for i in s:
-            if i not in dict:
-                dict[i]=1
-            else:
-                dict[i]+=1
-
-
-        for j in range(len(s)):
-           if dict[s[j]]==1:
-             return j
+        d={}
+        for num in s:
+            d[num]=d.get(num,0)+1
+        for i in range(len(s)):
+            if d[s[i]]==1:
+                return i
         return -1
