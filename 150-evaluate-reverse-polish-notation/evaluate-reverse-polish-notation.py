@@ -1,26 +1,19 @@
-class Solution(object):
-    def evalRPN(self, tokens):
-        """
-        :type tokens: List[str]
-        :rtype: int
-        """
-        res=[]
+class Solution:
+    def evalRPN(self, tokens: list[str]) -> int:
         stk=[]
-        for i in range(len(tokens)):
-            if stk and not tokens[i].lstrip("-").isdigit():
-                b=stk.pop()
-                a=stk.pop()
-                if tokens[i]=="+":
-                    stk.append(a+b)
-                elif tokens[i]=="-":
-                    stk.append(a-b)
-                elif tokens[i]=="*":
-                    stk.append(a*b)
-                else:
-                    res=abs(a)//abs(b)
-                    if (a<0)!=(b<0):
-                        res=-res
-                    stk.append(res)    
+        for num in tokens:
+            if num not in "+-*/":
+                stk.append(int(num))
             else:
-                stk.append(int(tokens[i]))
-        return stk[0]
+                a=stk.pop()
+                b=stk.pop()
+                if num=='+':
+                    stk.append(a+b)
+                elif num=='-':
+                     stk.append(b-a)
+                elif num=='/':
+                    stk.append(int(b/a))
+
+                else:
+                    stk.append(int(a*b))
+        return stk[-1]
